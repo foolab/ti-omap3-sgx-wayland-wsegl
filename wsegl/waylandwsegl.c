@@ -498,7 +498,7 @@ static WSEGLError wseglCreateWindowDrawable
     }      
   
     *drawable = (WSEGLDrawableHandle) nativeWindow; /* Reuse the egldisplay */
-    *rotationAngle = WSEGL_ROTATE_0;
+    *rotationAngle = WSEGL_ROTATE_90;
     return WSEGL_SUCCESS;
 }
 
@@ -518,7 +518,7 @@ static WSEGLError wseglCreatePixmapDrawable
     pixmap->format = buffer->buf->format;
     assert(PVR2DMemMap(egldisplay->context, 0, (void *)pixmap->handle, &pixmap->pvrmem) == PVR2D_OK);
     *drawable = (WSEGLDrawableHandle) pixmap;
-    *rotationAngle = WSEGL_ROTATE_0;
+    *rotationAngle = WSEGL_ROTATE_90;
     return WSEGL_SUCCESS;
 }
 
